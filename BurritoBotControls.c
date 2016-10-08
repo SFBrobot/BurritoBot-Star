@@ -10,7 +10,7 @@
 
 #include "rkCompetition.h"
 
-void moveX(pwrF, pwrS, pwrT, pwrL, time) {
+void moveX(int pwrF, int pwrS, int pwrT, int pwrL, int time) {
 	//Moves the X-Drive
 	motor[lfWheel] = pwrF;
 	motor[lbWheel] = pwrS;
@@ -19,7 +19,7 @@ void moveX(pwrF, pwrS, pwrT, pwrL, time) {
 	wait1Msec(time);	
 	
 }
-void moveF(pwr, s) {
+void moveF(int pwr, int s) {
 	//Moves the Fork
 	motor[l1Motor] = pwr;
 	motor[l2Motor] = pwr;
