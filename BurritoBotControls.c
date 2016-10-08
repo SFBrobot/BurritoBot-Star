@@ -31,6 +31,8 @@ void moveF(pwr, s) {
 void init() { }
 task auton() { 
 	//Work In Progress
+	moveX(127, 127, -127, -127, 100);
+	moveF(63, 250);
 	moveX(127, 127, -127, -127, 500);
 	moveF(63, 750);
 	if(SensorValue[dgtl1]) {
