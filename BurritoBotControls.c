@@ -10,12 +10,42 @@
 
 #include "rkCompetition.h"
 
+void moveX(pwrF, pwrS, pwrT, pwrL, time) {
+
+	motor[lfWheel] = pwrF;
+	motor[lbWheel] = pwrS;
+	motor[rfWheel] = pwrT;
+	motor[rbWheel] = pwrL;
+	wait1Msec(time);	
+	
+}
+void moveF(pwr, s) {
+	//Moves the Fork
+	motor[l1Motor] = pwr;
+	motor[l2Motor] = pwr;
+	motor[l3Motor] = pwr;
+	motor[l4Motor] = pwr;
+	wait1Msec(s);
+}
+
 void init() { }
-task auton() { }
+task auton() { 
+	//Work In Progress
+	moveX(127, 127, -127, -127, 500);
+	moveF(63, 750);
+	if(SensorValue[dgtl1]) {
+	moveX(127, -127, 127, -127, 1000);
+	}
+	else {
+	moveX(-127, 127, -127, 127, 1000);
+	}
+	moveF(127, 750);
+	
+}
 task userOp() {
 
 	while(true) {
-
+	
 		motor[lfWheel] = vexRT[Ch3] + vexRT[Ch4] + vexRT[Ch1];
 		motor[rfWheel] = -(vexRT[Ch3] - vexRT[Ch4] - vexRT[Ch1]);
 		motor[lbWheel] = vexRT[Ch3] + vexRT[Ch4] - vexRT[Ch1];
