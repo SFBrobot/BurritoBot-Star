@@ -42,6 +42,13 @@ task auton() {
 	moveX(-127, 127, -127, 127, 1000);
 	}
 	moveF(127, 750);
+	if(SensorValue[dgtl1]) {
+	moveX(-127, 127, -127, 127, 500);
+	}
+	else {
+	moveX(127, -127, 127, -127, 500);
+	}
+	moveX(-127, -127, 127, 127, 150);
 	
 }
 task userOp() {
