@@ -11,7 +11,7 @@
 #include "rkCompetition.h"
 
 void moveX(pwrF, pwrS, pwrT, pwrL, time) {
-
+	//Moves the X-Drive
 	motor[lfWheel] = pwrF;
 	motor[lbWheel] = pwrS;
 	motor[rfWheel] = pwrT;
@@ -45,12 +45,12 @@ task auton() {
 task userOp() {
 
 	while(true) {
-	
+		//Moves the X-Drive through Joystick
 		motor[lfWheel] = vexRT[Ch3] + vexRT[Ch4] + vexRT[Ch1];
 		motor[rfWheel] = -(vexRT[Ch3] - vexRT[Ch4] - vexRT[Ch1]);
 		motor[lbWheel] = vexRT[Ch3] + vexRT[Ch4] - vexRT[Ch1];
 		motor[rbWheel] = -(vexRT[Ch3] - vexRT[Ch4] + vexRT[Ch1]);
-
+		//Moves the Fork Lift through Joystick
 		if(vexRT[Btn5U] == 1 || vexRT[Btn6U] == 1) {
 			motor[l1Motor] = 63;
 			motor[l2Motor] = 63;
